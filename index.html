@@ -1,41 +1,22 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Teachable Machine Image Model App</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    
-    #app-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-    
-    #webcam-container {
-      margin-bottom: 20px;
-    }
-    
-    #label-container div {
-      margin-bottom: 5px;
-    }
-    
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .high-confidence {
-        color: green;
-    }
+    <!-- Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  </style>
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+        <title>Teachable Machine Image Model App</title>
 </head>
 
 <body>
@@ -98,12 +79,27 @@
         
         labelElement.innerHTML = classPrediction;
         
-        // add green color when over 80%
-        if (prediction[i].probability > 0.80) {
-          labelElement.classList.add("high-confidence");
-        } else {
-          labelElement.classList.remove("high-confidence");
-        }
+
+
+        
+       // add blue color when over 80%
+if (prediction[i].probability > 0.85) {
+  labelElement.classList.add("high-confidence");
+  labelElement.classList.remove("middle-confidence");
+  labelElement.classList.remove("low-confidence");
+} 
+// add orange color when over 50%
+else if (prediction[i].probability > 0.50) {
+  labelElement.classList.remove("high-confidence");
+  labelElement.classList.add("middle-confidence");
+  labelElement.classList.remove("low-confidence");
+} 
+// add red color when over 0%
+else {
+  labelElement.classList.remove("high-confidence");
+  labelElement.classList.remove("middle-confidence");
+  labelElement.classList.add("low-confidence");
+}
 
         
       }

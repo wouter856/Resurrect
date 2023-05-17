@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFCEE;
+    background-image: url();
+    color: #4F5F00;
+  }
+
+  h1 {
+      font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  #app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  #webcam-container {
+    margin-bottom: 20px;
+  }
+  
+  #label-container div {
+      font-family: 'Roboto', sans-serif;
+    margin-bottom: 5px;
+
+  }
+  
+  button {
+      font-family: 'Space Grotesk', sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4F5F00;
+    color: #FAFCEE;
+    border: solid 1px;
+    border-radius: 16px;
+  }
+
+  .high-confidence {
+      color: #22266D;
+  }
+
+  .middle-confidence {
+      color: #CE8415;
+  }
+
+  .low-confidence {
+      color: #BF2323;
+  }
