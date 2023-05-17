@@ -53,7 +53,12 @@
     
 
 
-    <button type="button" onclick="init()">Start</button>
+    <button type="button" onclick="init(), showImage()">Start</button>
+
+    <div class="loading" style="display: none;">
+      <img src="loading.gif" alt="loading..." width="200px">
+    </div>
+
     <div id="webcam-container"></div>
     <div id="label-container"></div>
   </div>

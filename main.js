@@ -4,10 +4,26 @@ const URL = "https://teachablemachine.withgoogle.com/models/e8mr-2TXK/";
 let model, webcam, labelContainer, maxPredictions;
 
 let btn = document.querySelector("button");
+let loading = document.querySelector(".loading");
 
 // load the image model and setup the webcam
+function showImage() {
+  loading.style.display = "block";
+
+  setTimeout(function() {
+    loading.style.display = "none";
+  }, 7200);
+}
+
 async function init() {
 
+
+
+  
+  
+    
+  
+  loading.style.display = "block";
   btn.style.display = "none";
 
   const modelURL = URL + "model.json";
