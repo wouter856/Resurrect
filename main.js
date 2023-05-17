@@ -3,8 +3,13 @@ const URL = "https://teachablemachine.withgoogle.com/models/e8mr-2TXK/";
 
 let model, webcam, labelContainer, maxPredictions;
 
+let btn = document.querySelector("button");
+
 // load the image model and setup the webcam
 async function init() {
+
+  btn.style.display = "none";
+
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
@@ -47,9 +52,7 @@ async function loop() {
     labelElement.innerHTML = classPrediction;
     
 
-
-    
-   // add blue color when over 80%
+     // add blue color when over 85%
 if (prediction[i].probability > 0.85) {
 labelElement.classList.add("high-confidence");
 labelElement.classList.remove("middle-confidence");

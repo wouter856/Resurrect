@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #FAFCEE;
-    background-image: url();
     color: #4F5F00;
   }
 
@@ -39,13 +38,17 @@ body {
   }
 
   .high-confidence {
-      color: #22266D;
+      color: #4F5F00;
+      font-weight: 800;
+      font-size: larger;
   }
 
   .middle-confidence {
       color: #CE8415;
+      font-weight: 800;
   }
 
   .low-confidence {
       color: #BF2323;
+      font-weight: 400;
   }
